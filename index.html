@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior:smooth;
+  scroll-padding-top: 60px; 
+}
+
+body {
+  font-family: 'Segoe UI',Arial, sans-serif;
+  line-height: 1.6;
+  background-color:#acba69;
+  margin-top:40px;
+ 
+  
+}
+.header {
+  background: #565c06;
+  padding:5px ;
+ background: #565c06;
+  padding: 5px;
+  position: fixed;    
+  top: 0;            
+  width: 100%;       
+  z-index: 1000;           
+          
+}
+
+.navbar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+ 
+  
+}
+
+.navbar a {
+  color: rgb(216, 223, 3);
+  text-decoration: none;
+  margin:  15px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color:rgb(44, 50, 3);
+}
+#skills, #contactme,#aboutme {
+  text-align: center;
+}
+
+#skills h1, #skills p,
+#contactme h1, #contactme p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color:#3a4501;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin:auto;
+  gap:10px;
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img img {
+  width: 350px;
+  height:auto;
+  border-radius: 50%;
+  border: 4px solid #3a4501;
+  margin-top:55px;
+ 
+  max-width:90vw;
+  box-shadow:2px 2px 10px black;
+}
+
+.hero-text {
+  flex: 2;
+  padding: 20px;
+  color:#3a4501;
+  font-weight: bold;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  
+  display:flex;
+  justify-content:center;
+  
+}
+h3{
+  display:flex;
+  justify-content: center;
+  
+}
+
+#projects {
+  padding: 40px 20px;
+  text-align: center;
+  
+}
+
+#projects h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color:#3a4501;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: rgb(154, 163, 104); 
+  
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s;
+  width:100%;
+  height:auto;
+  margin:0 auto 20px;
+  max-width:400px;
+ 
+  
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.project-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+.project-card .tech {
+  font-style: italic;
+  color: #555;
+  margin: 8px 0;
+}
+
+.project-card .links {
+  margin-top: 10px;
+}
+
+.project-card .links a {
+  text-decoration: none;
+  color: white;
+  background: #3a4501;
+  padding: 6px 12px;
+  border-radius: 6px;
+ 
+  font-size: 14px;
+}
+
+.project-card .links a:hover {
+  background: #0056b3;
+}
+.hamburger { display: none; cursor: pointer; }
+.contact-box {
+  background:  rgb(154, 163, 104);         
+  max-width: 500px;              
+  margin: 0 auto;                
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(22, 23, 14, 0.12); 
+  border: 2px solid #acba69;   
+  text-align: center;
+}
+#contactme h1{
+  margin-bottom:40px;
+}
+
+@media (max-width: 768px) {
+   body { margin-top: 100px; 
+     }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    height: 42px; padding: 0 0; 
+  }
+  .navbar a {
+    display: none;
+    margin: 10px 0;
+    
+   
+  }
+  
+
+ .navbar.open a {
+  display: block;
+}
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+ 
+
+
+section{
+  margin: 100px 0;
+}
+.view-work-container {
+  text-align: center;
+  margin-top:30px;
+
+}
+
+.view-work-btn {
+  display: inline-block;
+  background: #565c06;
+  color: #fbfb91;
+  font-weight: bold;
+  font-size: 1.08rem;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(58, 69, 1, 0.12);
+  transition: background 0.2s, transform 0.13s, color 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.view-work-btn:hover {
+  background: #3a4501;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+li a{
+  color:#3a4501;
+}
+li{
+  display:flex;
+  flex-direction:column;
+}
+
+
+</style>
+</head>
+<body>
+  <header class = "header">
+  <nav class="navbar" id="navbar">
+    
+      <a href="#home">Home</a>
+      <a href="#aboutme">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contactme">Contact Me</a>
+  
+      <div class="hamburger" onclick="document.getElementById('navbar').classList.toggle('open')">☰</div>
+  </nav>
+  </header>
+  <main>
+    <section id="home" class="hero"></section>
+    <div class="hero-img">
+    <img src ="my photo.jpg" alt ="my photo"> 
+    </div>
+  
+    <div class="hero-text">
+    <h1>Hii, I'm Muskan Bhardwaj</h1>
+    <br>
+    
+     <h3> I am a first-year student at Scaler School of Technology with a<br> keen interest in software development and problem-solving.</h3>
+    <div class="view-work-container">
+        <a href="#projects" target="_blank" class="view-work-btn">View My Work</a>
+    </div>
+  </section>
+  </div>
+  </section>
+  <section id="aboutme">
+    <h1 style="color: #3a4501;">About Me</h1>
+    <p>I 'm <strong>Muskan Bhardwaj,</strong> a passionate Computer Science student at 
+    <strong>Scaler School Of Technology</strong>
+        I enjoy building projects that solve real-world problems and constantly
+        learning new technologies.
+    </p>
+    <p>
+      My interest include <strong>Web Development</strong>, Problem Solving and Open Source.
+    </p>
+    <p> 
+      Outside of coding, I enjoy designing,learning new tools and collaborating on creative projects.
+    </p>
+  </section>
+ <section id="skills">
+  <h1>Skills</h1>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin:30px;">
+    <div style="background:#f3f3f3; padding:15px; border-radius:8px; text-align:center;">Java</div>
+    <div style="background:#f3f3f3; padding:15px; border-radius:8px; text-align:center;">HTML</div>
+    <div style="background:#f3f3f3; padding:15px; border-radius:8px; text-align:center;">CSS</div>
+    <div style="background:#f3f3f3; padding:15px; border-radius:8px; text-align:center;">JavaScript</div>
+    <div style="background:#f3f3f3; padding:15px; border-radius:8px; text-align:center;">Git & GitHub</div>
+  </div>
+</section>
+<section id="projects">
+  <h1>My Projects</h1>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="orbit.png" alt="orbit">
+      <h3>Moon-Orbit</h3>
+      <p>Moon-Orbit</p>
+      <p class="tech">Tech: HTML, CSS</p>
+      <div class="links">
+        
+        <a href="https://muskan-bhardwaj.github.io/Moon-Orbit/">GitHub</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="project2.png" alt="FerrisWheel Screenshot">
+      <h3>Ferris-Wheel</h3>
+      <p>Ferris Wheel built with HTML and CSS only.</p>
+      <p class="tech">Tech: HTML, CSS</p>
+      <div class="links">
+        
+        <a href="https://muskan-bhardwaj.github.io/Ferris-Wheel/">GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</section>
+  <section id="contactme" >
+    <h1>Contact Me</h1>
+  <div class="contact-box">
+    <ul>
+      <li>Phone: 
+        <a>7078XXXXXX</a>
+      </li>
+      <li>Email: 
+        <a href="mailto:muskan.25bcs10224@sst.scaler.com">muskan.25bcs10224@sst.scaler.com</a>
+
+      </li>
+      <li>LinkedIn: 
+        <a href="https://www.linkedin.com/in/muskan-bhardwaj-54392a374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">https://www.linkedin.com/in/muskan-bhardwaj</a>
+      </li>
+      <li>Github: 
+        <a href="https://github.com/Muskan-Bhardwaj">https://github.com/Muskan-Bhardwaj</a>
+      </li>
+    </ul>
+    </div>
+  </section>
+ </main>
+ <footer style="text-align:center; color:#3a4501; margin-bottom:15px;">
+  &copy; 2025 Muskan Bhardwaj. All rights reserved.
+</footer>
+</body>
+</html>
